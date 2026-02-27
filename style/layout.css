@@ -1,0 +1,143 @@
+body {
+    font-family: var(--primary-font);
+    background-color: var(--color-primary);
+    padding: 0 .5rem;
+    max-width: 60rem;
+    margin-inline: auto;
+}
+
+h1 {
+    font: var(--primary-heading);
+}
+
+input {
+    font-family: var(--primary-font);
+    box-shadow: var(--inner-shadow);
+}
+
+input:focus {
+    box-shadow: var(--heavy-shadow);
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .8rem;
+    padding: 2rem 1rem;
+    margin: .5rem;
+    border-radius: 1rem;
+    background-color: var(--color-white);
+    box-shadow: var(--inner-shadow);
+}
+
+.icon {
+    background-color: black;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.icon--white {
+    background-color: var(--color-white);
+}
+
+.icon--red {
+    background-color: var(--color-primary);
+}
+
+
+.pokeball-icon {
+    mask-image: url(../images/ui/icons/pokeball.svg);
+}
+
+.search-icon {
+    mask-image: url(../images/ui/icons/search.svg);
+}
+
+.bug {
+    background-color: var(--color-bug);
+}
+
+.dark {
+    background-color: var(--color-dark);
+}
+
+.dragon {
+    background-color: var(--color-dragon);
+}
+
+.electric {
+    background-color: var(--color-electric);
+}
+
+.fairy {
+    background-color: var(--color-fairy);
+}
+
+.fighting {
+    background-color: var(--color-fighting);
+}
+
+.fire {
+    background-color: var(--color-fire);
+}
+
+.flying {
+    background-color: var(--color-flying);
+}
+
+.ghost {
+    background-color: var(--color-ghost);
+}
+
+.normal {
+    background-color: var(--color-normal);
+}
+
+.grass {
+    background-color: var(--color-grass);
+}
+
+.ground {
+    background-color: var(--color-ground);
+}
+
+.ice {
+    background-color: var(--color-ice);
+}
+
+.poison {
+    background-color: var(--color-poison);
+}
+
+.psychic {
+    background-color: var(--color-psychic);
+}
+
+.rock {
+    background-color: var(--color-rock);
+}
+
+.steel {
+    background-color: var(--color-steel);
+}
+
+.water {
+    background-color: var(--color-water);
+}
+
+
+@media (max-width: 550px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 380px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}

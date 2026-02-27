@@ -1,0 +1,22 @@
+.header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: var(--color-primary);
+    padding: 2rem .8rem;
+    gap: 1.5rem;
+    color: var(--color-white);
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header__logo {
+    height: 1rem;
+    color: white;
+}
+
+.header__search {
+    grid-column: span 2;
+}
