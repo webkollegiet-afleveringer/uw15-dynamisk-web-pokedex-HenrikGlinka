@@ -19,8 +19,12 @@
     border: none;
     outline: none;
     border-radius: 10rem;
+    width: 3rem;
     height: 3rem;
-    aspect-ratio: 1;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .search__input::-webkit-search-cancel-button {

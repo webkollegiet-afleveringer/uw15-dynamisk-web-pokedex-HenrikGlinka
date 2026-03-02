@@ -1,0 +1,68 @@
+.details-page::after {
+    content: '';
+    display: block;
+    background-image: url(../images/ui/icons/pokeball.svg);
+    background-size: 20rem;
+    background-position: top right;
+    background-repeat: no-repeat;
+    filter: invert();
+    opacity: 0.1;
+    max-width: 60rem;
+    width: calc(100% - 2rem);
+    margin-inline: auto;
+    height: 20rem;
+    position: absolute;
+    top: 1rem;
+    z-index: -1;
+}
+
+.details-page main {
+    margin-top: 22rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-top: 6rem;
+}
+
+.details-page .pokemon-image {
+    width: 100%;
+    max-width: 20rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-70%);
+}
+
+.details-page .type-container {
+    margin-inline: auto;
+    grid-column: span 3;
+}
+
+.details-page h2 {
+    text-align: center;
+}
+
+
+.details-page table {
+    width: 100%;
+    border-collapse: collapse;
+
+    text-align: center;
+}
+
+.details-page th + th, .details-page td + td {
+    padding: .5rem;
+    border-left: 2px solid var(--color-gray);
+}
+
+.details-page th {
+    font-weight: normal;
+    color: var(--color-medium-gray);
+    width: 33.3333%;
+    font-size: .8rem;
+}
+
+.details-page td .icon {
+    font-size: 1.5rem;
+    vertical-align: bottom;
+}

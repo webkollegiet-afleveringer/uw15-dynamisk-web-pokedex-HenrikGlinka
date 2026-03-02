@@ -5,6 +5,9 @@ const TEST_API_DETAILS_URL = "http://127.0.0.1:5500/public/test-details-data.jso
 export async function fetchPokemonList(limit = 20, offset = 0) {
     const url = new URL(API_URL);
 
+    url.searchParams.set("limit", limit);
+    url.searchParams.set("offset", offset);
+
     const response = await fetch(url);
     const data = await response.json();
 
@@ -16,6 +19,9 @@ export async function fetchPokemonList(limit = 20, offset = 0) {
 
 export async function fetchPokemonListTest(limit = 20, offset = 0) {
     const url = new URL(TEST_API_URL);
+
+    url.searchParams.set("limit", limit);
+    url.searchParams.set("offset", offset);
 
     const response = await fetch(url);
     const data = await response.json();
@@ -29,14 +35,14 @@ export async function fetchPokemonDetails(id) {
     const response = await fetch(url);
     const data = await response.json();
 
-    return data.results;
+    return data;
 }
 
 export async function fetchPokemonDetailsTest(id) {
-    const url = new URL(id, TEST_API_DETAILS_URL);
+    const url = new URL(TEST_API_DETAILS_URL);
 
     const response = await fetch(url);
     const data = await response.json();
 
-    return data.results;
+    return data;
 }
