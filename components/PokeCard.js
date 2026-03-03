@@ -8,7 +8,7 @@ export default function PokeCard(pokemon) {
     const image = IMAGE_URL + id + '.png';
 
     return /* HTML */`
-        <a class="poke-card" href="/details/?pokemon=${id}">
+        <a class="poke-card" href="details/?pokemon=${id}">
             <p class="poke-card__number">#${id.padStart(4, '0')}</p>
             <img class="poke-card__image" src="${image}" alt="${name}">
             <h2 class="poke-card__title">${name}</h2>

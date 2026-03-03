@@ -19,15 +19,15 @@ document.body.innerHTML = /* HTML */`
     </audio>
 
         <header>
-            <a href="/"><span class="icon icon--white arrow-back-icon"></span></a>
+            <a href="./"><span class="icon icon--white arrow-back-icon"></span></a>
             <h1>${name}</h1>
             <p>#${id.toString().padStart(3, '0')}</p>
         </header>
         <main>
             <div class="image-container">
-                <a href="/details/?pokemon=${id - 1 <= 1 ? 1025 : id - 1}"><span class="icon icon--white chevron-left-icon"></span></a>
+                <a href="./details/?pokemon=${id - 1 <= 1 ? 1025 : id - 1}"><span class="icon icon--white chevron-left-icon"></span></a>
                 <img class="pokemon-image" src="${pokemon.details.sprites.other['official-artwork'].front_default}" alt="${name}" class="pokemon-image">
-                <a href="/details/?pokemon=${id + 1 >= 1025 ? 1 : id + 1}"><span class="icon icon--white chevron-right-icon"></span></a>
+                <a href="./details/?pokemon=${id + 1 >= 1025 ? 1 : id + 1}"><span class="icon icon--white chevron-right-icon"></span></a>
             </div>
             <div class="type-container">
                 ${pokemon.details.types.map(type => /* html */`
