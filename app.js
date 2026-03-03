@@ -5,6 +5,9 @@ import { fetchPokemonList, fetchPokemonListTest } from './utilities/fetch-pokemo
 const sortBy = new URLSearchParams(window.location.search).get("sortby");
 const pokemonData = await fetchPokemonListTest();
 
+console.log(pokemonData);
+
+
 function updatePokemonList(pokemonList) {
     const main = document.querySelector('main');
 

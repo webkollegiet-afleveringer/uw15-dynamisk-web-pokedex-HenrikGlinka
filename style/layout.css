@@ -71,6 +71,18 @@ main {
     mask-image: url(../images/ui/icons/tag.svg);
 }
 
+.chevron-left-icon {
+    mask-image: url(../images/ui/icons/chevron_left.svg);
+}
+
+.chevron-right-icon {
+    mask-image: url(../images/ui/icons/chevron_right.svg);
+}
+
+.arrow-back-icon {
+    mask-image: url(../images/ui/icons/arrow_back.svg);
+}
+
 .weight-icon {
     mask-image: url(../images/ui/icons/weight.svg);
 }
