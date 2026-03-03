@@ -37,8 +37,6 @@ window.loadMorePokemon = async () => {
     updatePokemonList(pokemonData);
 }
 
-
-
 document.body.innerHTML = /* HTML */`
     ${Header({ search: { onInput: handleSearchInput, sortBy } })}
     
