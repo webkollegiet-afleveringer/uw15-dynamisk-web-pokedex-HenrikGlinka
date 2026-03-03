@@ -26,9 +26,6 @@ button {
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: .8rem;
     padding: 2rem 1rem;
     margin: .5rem;
     border-radius: 1rem;
