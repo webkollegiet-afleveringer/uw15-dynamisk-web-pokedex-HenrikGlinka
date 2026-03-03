@@ -1,8 +1,10 @@
 import { fetchPokemonDetails } from "../utilities/fetch-pokemon.js";
+import { BASE_PATH } from "../utilities/base-path.js";
 
 const id = Number(new URLSearchParams(window.location.search).get("pokemon"));
 
-if (isNaN(id)) window.location.href = "/";
+if (isNaN(id)) window.location.href = `${BASE_PATH}/`;
+
 
 const pokemon = await fetchPokemonDetails(id);
 console.log(pokemon);
@@ -19,15 +21,15 @@ document.body.innerHTML = /* HTML */`
     </audio>
 
         <header>
-            <a href="./"><span class="icon icon--white arrow-back-icon"></span></a>
+            <a href="${BASE_PATH}/"><span class="icon icon--white arrow-back-icon"></span></a>
             <h1>${name}</h1>
             <p>#${id.toString().padStart(3, '0')}</p>
         </header>
         <main>
             <div class="image-container">
-                <a href="./details/?pokemon=${id - 1 <= 1 ? 1025 : id - 1}"><span class="icon icon--white chevron-left-icon"></span></a>
+                <a href="${BASE_PATH}/details/?pokemon=${id - 1 <= 1 ? 1025 : id - 1}"><span class="icon icon--white chevron-left-icon"></span></a>
                 <img class="pokemon-image" src="${pokemon.details.sprites.other['official-artwork'].front_default}" alt="${name}" class="pokemon-image">
-                <a href="./details/?pokemon=${id + 1 >= 1025 ? 1 : id + 1}"><span class="icon icon--white chevron-right-icon"></span></a>
+                <a href="${BASE_PATH}/details/?pokemon=${id + 1 >= 1025 ? 1 : id + 1}"><span class="icon icon--white chevron-right-icon"></span></a>
             </div>
             <div class="type-container">
                 ${pokemon.details.types.map(type => /* html */`

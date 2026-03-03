@@ -14,9 +14,6 @@ export async function fetchPokemonList(limit = 20, offset = 0) {
     const response = await fetch(url);
     const data = await response.json();
 
-    console.log(data.results);
-    
-
     return data.results;
 }
 
@@ -35,8 +32,6 @@ export async function fetchPokemonListTest(limit = 20, offset = 0) {
 export async function fetchPokemonDetails(id) {
 
     if (cache.has(id)) return cache.get(id);
-
-
 
     const [details, species] = await Promise.all([
         await fetch(new URL(`pokemon/${id}`, API_URL))
