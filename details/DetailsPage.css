@@ -1,0 +1,187 @@
+.details-page {
+    max-width: 40rem;
+    padding-top: 2rem;
+}
+
+.details-page header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-white);
+    font-size: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem .5rem;
+    z-index: 1;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+    
+    animation: header-scroll linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+}
+
+.details-page header a {
+    display: flex;
+    align-items: center;
+}
+
+.details-page header h1 {
+    font-size: 2.2rem;
+}
+
+.details-page header p {
+    margin-left: auto;
+    font-weight: bold;
+    font-size: 1rem;
+
+}
+
+.details-page main::after {
+    content: '';
+    display: block;
+    background-image: url(../images/ui/icons/pokeball.svg);
+    background-size: 16rem;
+    background-position: top right;
+    background-repeat: no-repeat;
+    filter: invert();
+    opacity: 0.1;
+    width: calc(100% - 2rem);
+    height: 16rem;
+    position: fixed;
+    top: 1rem;
+    z-index: -1;
+}
+
+.details-page main {
+    margin-top: 18rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 6rem 1rem 1rem 1rem;
+    gap: 2rem;
+    margin-inline: auto;
+}
+
+.details-page .image-container {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    transform: translateY(-70%);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    justify-items: center;
+    font-size: 2rem;
+}
+
+.details-page .pokemon-image {
+    width: 100%;
+    max-width: 20rem;
+    cursor: pointer;
+}
+
+.details-page .type-container {
+    margin-inline: auto;
+    grid-column: span 3;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.details-page h2 {
+    text-align: center;
+}
+
+
+.details-page table {
+    width: 100%;
+    border-collapse: collapse;
+
+    text-align: center;
+}
+
+.details-page .about-table th+th,
+.details-page .about-table td+td {
+    padding: .5rem;
+    border-left: 2px solid var(--color-gray);
+}
+
+.details-page .about-table th {
+    font-weight: normal;
+    color: var(--color-medium-gray);
+    width: 33.3333%;
+    font-size: .8rem;
+}
+
+.details-page .about-table td {
+    white-space: nowrap;
+    padding-inline: .5rem;
+}
+
+.details-page .about-table td .icon {
+    font-size: 1.5rem;
+    vertical-align: bottom;
+}
+
+.details-page .stats-table th {
+    border-right: 2px solid var(--color-gray);
+    padding-right: 1rem;
+    text-align: right;
+}
+
+.details-page .stats-table td {
+    padding-left: 1rem;
+    vertical-align: middle;
+    font-size: 1rem;
+    font-family: monospace;
+}
+
+.details-page .stats-table td:last-child {
+    width: 100%;
+}
+
+.details-page meter {
+    width: 100%;
+    height: .5rem;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: .5rem;
+    background: none;
+    background-color: color-mix(in srgb, currentColor 20%, transparent);
+    vertical-align: middle;
+}
+
+.details-page meter::-webkit-meter-bar {
+    background: none;
+    border-radius: .5rem;
+    height: .5rem;
+}
+
+.details-page meter::-webkit-meter-optimum-value {
+    background: none;
+    background-color: currentColor;
+    border-radius: .5rem;
+}
+
+.details-page meter::-moz-meter-bar {
+    background: none;
+    background-color: currentColor;
+    border-radius: .5rem;
+}
+
+.details-page meter::-moz-meter-optimum {
+    background: none;
+    background-color: currentColor;
+    border-radius: .5rem;
+}
+
+@keyframes header-scroll {
+    to {
+        background-color: var(--color-primary);
+        box-shadow: var(--heavy-shadow);
+    }
+}
