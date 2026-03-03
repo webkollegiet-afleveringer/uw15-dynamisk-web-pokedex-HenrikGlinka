@@ -1,9 +1,9 @@
 import Header from './components/Header.js';
 import PokeCard from './components/PokeCard.js';
-import { fetchPokemonList, fetchPokemonListTest } from './utilities/fetch-pokemon.js';
+import { fetchPokemonList } from './utilities/fetch-pokemon.js';
 
 const sortBy = new URLSearchParams(window.location.search).get("sortby");
-const pokemonData = await fetchPokemonListTest();
+const pokemonData = await fetchPokemonList();
 
 console.log(pokemonData);
 
