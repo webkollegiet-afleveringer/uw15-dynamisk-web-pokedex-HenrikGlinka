@@ -7,10 +7,11 @@ const sortBy = new URLSearchParams(window.location.search).get("sortby");
 const pokemonData = await fetchPokemonList();
 
 let loading = false;
+let searching = false;
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    if (!loading && entry.isIntersecting) {
+    if (!loading && !searching && entry.isIntersecting) {
       loadMorePokemon();
     }
   });
@@ -33,6 +34,9 @@ function updatePokemonList(pokemonList) {
 
 function handleSearchInput(event) {
     const searchTerm = event.target.value.toLowerCase();
+
+    searching = searchTerm.trim() !== "";
+
     const filteredPokemon = pokemonData.filter(
         pokemon => pokemon.name.toLowerCase().includes(searchTerm)
     );
@@ -42,6 +46,7 @@ function handleSearchInput(event) {
 
 window.loadMorePokemon = async () => {
     loading = true;
+    document.querySelector('.spinner').style.display = 'block';
 
     pokemonData.sort((a, b) => a.id - b.id);
 
@@ -49,7 +54,8 @@ window.loadMorePokemon = async () => {
     pokemonData.push(...newPokemon);
     updatePokemonList(pokemonData);
 
-    //loading = false;
+    loading = false;
+    document.querySelector('.spinner').style.display = 'none';
 }
 
 document.body.innerHTML = /* HTML */`
@@ -64,5 +70,7 @@ document.body.innerHTML = /* HTML */`
 `;
 
 observer.observe(document.querySelector('.load-more'));
+document.querySelector('.spinner').style.display = 'none';
+
 
 updatePokemonList(pokemonData);
