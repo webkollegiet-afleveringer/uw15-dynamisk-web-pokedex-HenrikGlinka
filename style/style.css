@@ -1,0 +1,9 @@
+@import url(fonts/poppins/fontface.css);
+@import url(variables.css);
+@import url(resets.css);
+@import url(layout.css);
+
+@import url(../components/Header.css);
+@import url(../components/Search.css);
+@import url(../components/PokeCard.css);
+@import url(../components/Spinner.css);

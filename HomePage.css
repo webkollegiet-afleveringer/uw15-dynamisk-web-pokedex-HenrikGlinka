@@ -1,0 +1,17 @@
+.home-page .pokemon-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .8rem;
+}
+
+@media (max-width: 550px) {
+    .home-page .pokemon-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 380px) {
+    .home-page .pokemon-cards {
+        grid-template-columns: 1fr;
+    }
+}
