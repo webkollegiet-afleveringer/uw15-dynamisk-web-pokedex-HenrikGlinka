@@ -244,16 +244,3 @@ main {
 .water-text {
     color: var(--color-water);
 }
-
-
-@media (max-width: 550px) {
-    main {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 380px) {
-    main {
-        grid-template-columns: 1fr;
-    }
-}
